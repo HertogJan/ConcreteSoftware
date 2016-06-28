@@ -1,0 +1,20 @@
+{
+  "name": "mixer-api",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "Game",
+  "contributors": [],
+  "dependencies": {},
+  "description": "mixer api",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "license": "ISC"
+}

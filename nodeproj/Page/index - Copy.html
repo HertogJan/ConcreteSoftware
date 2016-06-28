@@ -1,0 +1,140 @@
+<html>
+    <head>
+        <title>Quick push</title>
+		<script src="./Scripts/includes/socket.io.js"></script>
+		<script src="./Scripts/includes/jquery-2.2.3.min.js"></script>
+		<script src="./Scripts/includes/angular.min.js"></script>
+		<script>
+			/*var socket = io.connect('http://localhost:1337');
+			
+			socket.on('notification', function (data) {
+				$('#container').html( $('#container').html() + "->"+ data.data);
+			});*/
+		</script>
+		<link rel="stylesheet" href="./Style/style.css">
+    </head>
+    <body>
+        
+		<div class="silo-row">
+			<div class="silo-container">
+				<div class="silo-summary">
+					<span> = 100</span>
+				</div>
+				<div class="silo-border">
+				</div>
+				<div class="indicator"></div>
+			</div>
+			<div class="silo-container">
+				<div class="silo-summary">
+					<span> = 100</span>
+				</div>
+				<div class="silo-border">
+				</div>
+				<div class="indicator"></div>
+			</div>
+			<div class="silo-container">
+				<div class="silo-summary">
+					<span> = 100</span>
+				</div>
+				<div class="silo-border">
+				</div>
+				<div class="indicator"></div>
+			</div>
+			<div class="silo-container">
+				<div class="silo-summary">
+					<span> = 100</span>
+				</div>
+				<div class="silo-border">
+				</div>
+				<div class="indicator"></div>
+			</div>
+		</div>
+		<div class="menger-row">
+			<div class="notification-container">
+				<span class="info-label">Meldingen</span>
+				<ul class="notifications">
+					<li>tijd - melding</li>
+					<li>tijd - melding</li>
+					<li>tijd - melding</li>
+					<li>tijd - melding</li>
+					<li>tijd - melding</li>
+					<li>tijd - melding</li>
+					<li>tijd - melding</li>
+					<li>tijd - melding</li>
+				</ul>
+			</div>
+			<div class="menger-container">
+				<div class="table-container">
+					<table class="menger-table">
+						<tbody>
+							<tr><td colspan="10"><span class="info-label">Watercorrectie: 4 kg/m</span></td></tr>
+							<tr class="button-row">
+								<td><span>--</span></td>
+								<td><span>-</span></td>
+								<td><span>0</span></td>
+								<td><span>+</span></td>
+								<td><span>++</span></td>
+							</tr>
+							<tr class="text-row"><td colspan="10"><span class="info-label">Stand</span></td></tr>
+							<tr class="button-row">
+								<td><span>1</span></td>
+								<td><span>2</span></td>
+								<td><span>3</span></td>
+								<td><span>4</span></td>
+							</tr>
+							<tr class="text-row">
+								<td colspan="10">
+									<span class="info-label">Menger Stroom:</span>
+									<span class="menger-stroom-nr">5</span>
+								</td>
+							</tr>
+							<tr class="text-row">
+								<td colspan="10">
+									<span class="info-label">Charge:</span>
+									<span class="charge-nr">5</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="menger-icon">
+					<div class="top">
+						<span class="menger-text">Menger</span>
+					</div>
+					<div class="middle">
+						<div class="indicator first"></div>
+						<div class="indicator second"></div>
+						<div class="indicator third"></div>
+						<div class="indicator fourth"></div>
+					</div>
+					<div class="bottom">
+						
+					</div>
+				</div>
+			</div>
+			<div class="logo-container">
+			</div>
+		</div>
+		<div class="info-row">
+			<table>
+				<thead>
+					<tr>
+						<td>Opdrachtnr</td>
+						<td>Tijd</td>
+						<td>Klantnr</td>
+						<td class="recept-col">Recept</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Opdrachtnr</td>
+						<td>Tijd</td>
+						<td>Klantnr</td>
+						<td class="recept-col">Recept</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+    </body>
+</html>

@@ -1,0 +1,112 @@
+<html ng-app="mengerApp">
+    <head>
+        <title>Quick push</title>
+		<script src="./Scripts/includes/socket.io.js"></script>
+		<script src="./Scripts/includes/jquery-2.2.3.min.js"></script>
+		<script src="./Scripts/includes/angular.min.js"></script>
+		<script src="./Scripts/Angular/app.module.js"></script>
+		<script src="./Scripts/Angular/main.service.js"></script>
+		<script src="./Scripts/Angular/main.controller.js"></script>
+
+		<link rel="stylesheet" href="./Style/style.css">
+    </head>
+    <body ng-controller="MengerController as mc">
+		<div class="silo-row">
+			<div class="silo-container" ng-repeat="group in mc.service.SiloSetup.silos">
+				<div class="silo" ng-repeat="silo in group.list">
+					<span class="silo-info">{{silo.ingredient}}</span>
+					<span class="percentage">{{mc.service.siloState.siloGroup[group.groupID].silos[silo.siloID].percentage}}</span>
+					<div class="background" percentage=""></div>
+				</div>
+				<div class="silo-summary">
+					<span class="scale">= {{mc.service.siloState.siloGroup[group.groupID].currWeight}}</span>
+				</div>
+				<div class="silo-border">
+				</div>
+				<div class="indicator"></div>
+			</div>
+		</div>
+		<div class="menger-row">
+			<div class="notification-container">
+				<span class="info-label">Meldingen</span>
+				<div class="note-container">
+					<ul class="notifications">
+						<li ng-repeat="notification in mc.service.notifications">{{notification.time}} - {{notification.note}}</li>
+					</ul>
+				</div>
+			</div>
+			<div class="menger-container">
+				<div class="table-container">
+					<table class="menger-table">
+						<tbody>
+							<tr><td colspan="10"><span class="info-label">Watercorrectie: {{mc.service.menger.correctieKg}} kg/m</span></td></tr>
+							<tr class="button-row">
+								<td><span>--</span></td>
+								<td><span>-</span></td>
+								<td><span>0</span></td>
+								<td><span>+</span></td>
+								<td><span>++</span></td>
+							</tr>
+							<tr class="text-row"><td colspan="10"><span class="info-label">Stand</span></td></tr>
+							<tr class="button-row">
+								<td><span>1</span></td>
+								<td><span>2</span></td>
+								<td><span>3</span></td>
+								<td><span>4</span></td>
+							</tr>
+							<tr class="text-row">
+								<td colspan="10">
+									<span class="info-label">Menger Stroom:</span>
+									<span class="menger-stroom-nr">{{mc.service.menger.mengerStroom}}</span>
+								</td>
+							</tr>
+							<tr class="text-row">
+								<td colspan="10">
+									<span class="info-label">Charge:</span>
+									<span class="charge-nr">{{mc.service.menger.charge}}</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="menger-icon">
+					<div class="top">
+						<span class="menger-text">Menger</span>
+					</div>
+					<div class="middle">
+						<div class="indicator first"></div>
+						<div class="indicator second"></div>
+						<div class="indicator third"></div>
+						<div class="indicator fourth"></div>
+					</div>
+					<div class="bottom">
+						
+					</div>
+				</div>
+			</div>
+			<div class="logo-container">
+			</div>
+		</div>
+		<div class="info-row">
+			<table>
+				<thead>
+					<tr>
+						<td>Opdrachtnr</td>
+						<td>Tijd</td>
+						<td>Klantnr</td>
+						<td class="recept-col">Recept</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="row in mc.service.infoRows">
+						<td>{{row.no}}</td>
+						<td>{{row.time}}</td>
+						<td>{{row.customer}}</td>
+						<td class="recept-col">{{row.recept}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+    </body>
+</html>
